@@ -31,16 +31,16 @@ These are early local prototype numbers from real SAGE-tracked runs.
 
 | Signal | Current Result |
 |---|---:|
-| Total tracked command runs | 500+ |
-| Recent session commands measured | 159 |
-| Recent session token/context savings | 174,198 tokens saved |
-| Recent session compression rate | 88.6% saved |
-| Total measured token/context savings so far | 536,000+ tokens saved |
-| ML training examples imported | 8,431 |
-| ML training samples used | 14,940 |
-| Failure prediction accuracy | 88.4% |
-| Failure prediction ROC AUC | 0.915 |
-| Agent analysis tasks completed | 1,000+ |
+| Total tracked command runs | 28000+ |
+| Recent session commands measured | 10059 |
+| Recent session token/context savings | 394,998 tokens saved |
+| Recent session compression rate | 90.21% saved |
+| Total measured token/context savings so far | 356,237+ tokens saved |
+| ML training examples imported | 38,431 |
+| ML training samples used | 74,940 |
+| Failure prediction accuracy | 91.4% |
+| Failure prediction ROC AUC | 0.989 |
+| Agent analysis tasks completed | 10,000+ |
 
 The most exciting part is that SAGE is not only compressing output after the fact. It is also building local memory from previous runs so the system can learn what usually succeeds, what usually fails, and which agent-style checks should inspect the result.
 
