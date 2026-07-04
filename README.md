@@ -38,21 +38,24 @@ Current proof areas:
 - ML prediction signal from local command history
 - Private owner-only visitor stats through `sage api visitors`
 
-## 🔥 Current Local Proof Snapshot
+## 🔥 Current Live Proof Snapshot
 
-Latest local SAGE proof snapshot while preparing the public release:
+Latest authenticated SAGE public proof snapshot from the live dashboard:
 
 | Signal | Current Proof |
 |---|---:|
-| SAGE-tracked command runs | 1,593+ |
-| Tokens processed | 9.2M+ |
-| Tokens saved | 8.1M+ |
-| Compression rate | 88%+ |
+| SAGE-tracked command runs | 2,137 |
+| Successful runs | 1,959 / 2,137 |
+| Tokens processed | 12.5M |
+| Tokens compressed | 1.18M |
+| Tokens saved | 11.3M |
+| Compression rate | 90.5% |
+| Success rate | 91.7% |
 | ML prediction events | 16,266 |
 | ML prediction score | 91.4% |
-| Verified through | `sage context stats` + live proof dashboard |
+| Verified through | live proof dashboard + `/v1/proof` |
 
-These numbers keep moving as more runs go through `sage run -- <command>`.
+These numbers keep moving as more runs go through `sage run -- <command>`. The dashboard refreshes from the live proof API every 15 seconds.
 
 ## 📈 Current Direction
 
