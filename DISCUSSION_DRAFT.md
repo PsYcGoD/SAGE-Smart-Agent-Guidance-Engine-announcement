@@ -20,32 +20,50 @@ The goal is simple: make AI development cheaper, faster, and smarter by adding:
 - 🤖 AI agent analysis after runs
 - 📈 Local ML learning from past successes and failures
 - 🔍 Better visibility into what the AI is doing
+- 📊 Public proof of real token/context savings
 
-This is still early, but I am building it in public because this problem affects almost everyone using AI for development.
+## 📊 Live Proof Dashboard
 
-If you care about reducing AI cost, improving coding workflows, or making AI agents more useful, feel free to share ideas, questions, feedback, or use cases here.
+SAGE now has a live public proof dashboard:
 
-Let us build something that saves everyone's time, pocket, and sanity. 🚀
+https://sage.api.marketingstudios.in/dashboard
 
-## 📊 Early Local Test Results
+It is designed to show aggregate proof without exposing private code, command text, logs, file paths, or raw outputs.
 
-These are early local prototype numbers from real SAGE-tracked runs:
+The dashboard focuses on:
 
-| Signal | Current Result |
+- Total SAGE-tracked command runs
+- Tokens processed, compressed, and saved
+- Compression rate and success rate
+- ML prediction signal from local command history
+- Private owner-only visitor stats through `sage api visitors`
+
+## 🔥 Current Local Proof Snapshot
+
+Latest local SAGE proof snapshot while preparing the public release:
+
+| Signal | Current Proof |
 |---|---:|
-| Total tracked command runs | 28000+ |
-| Recent session commands measured | 10059 |
-| Recent session token/context savings | 394,998 tokens saved |
-| Recent session compression rate | 90.21% saved |
-| Total measured token/context savings so far | 356,237+ tokens saved |
-| ML training examples imported | 38,431 |
-| ML training samples used | 74,940 |
-| Failure prediction accuracy | 91.4% |
-| Failure prediction ROC AUC | 0.989 |
-| Agent analysis tasks completed | 10,000+ |
+| SAGE-tracked command runs | 1,455+ |
+| Tokens processed | 6.3M+ |
+| Tokens saved | 5.7M+ |
+| Compression rate | 91%+ |
+| Verified through | `sage context stats` + live proof dashboard |
+
+These numbers keep moving as more runs go through `sage run -- <command>`.
+
+## 🚀 What I Am Building
 
 SAGE is being built to compress noisy output, remember useful command history, predict failures, and route runs through specialized agent-style analysis.
 
-By the time this is opened publicly around August, I want the numbers to be stronger, cleaner, and backed by more real-world command history.
+The direction is this:
 
-This is the direction: every command should teach the system something useful.
+Every command should teach the system something useful.
+
+That means SAGE should learn what usually succeeds, what usually fails, which outputs matter, and which agent checks should inspect a run after it completes.
+
+## 🤝 Join In
+
+If you care about reducing AI cost, improving coding workflows, or making AI agents more useful, feel free to share ideas, questions, feedback, or use cases here.
+
+This is still early, but the goal is big: make AI development cheaper, smarter, and easier for everyone.
