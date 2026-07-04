@@ -28,7 +28,7 @@ SAGE now has a live public proof dashboard:
 
 https://sage.api.marketingstudios.in/dashboard
 
-![SAGE Live Public Proof Dashboard](https://raw.githubusercontent.com/PsYcGoD/SAGE-Smart-Agent-Guidance-Engine-announcement/main/assets/sage-live-dashboard.png)
+![SAGE Live Public Proof Dashboard](https://raw.githubusercontent.com/PsYcGoD/SAGE-Smart-Agent-Guidance-Engine-announcement/44c1b72c3f65c56e8d7b8637cfc531f16d276a45/assets/sage-live-dashboard.png)
 
 It is designed to show aggregate proof without exposing private code, command text, logs, file paths, or raw outputs.
 
@@ -46,10 +46,12 @@ Latest local SAGE proof snapshot while preparing the public release:
 
 | Signal | Current Proof |
 |---|---:|
-| SAGE-tracked command runs | 1,455+ |
-| Tokens processed | 6.3M+ |
-| Tokens saved | 5.7M+ |
-| Compression rate | 91%+ |
+| SAGE-tracked command runs | 1,593+ |
+| Tokens processed | 9.2M+ |
+| Tokens saved | 8.1M+ |
+| Compression rate | 88%+ |
+| ML prediction events | 16,266 |
+| ML prediction score | 91.4% |
 | Verified through | `sage context stats` + live proof dashboard |
 
 These numbers keep moving as more runs go through `sage run -- <command>`.
