@@ -28,6 +28,8 @@ SAGE now has a live public proof dashboard:
 
 https://sage.api.marketingstudios.in/dashboard
 
+![SAGE Live Public Proof Dashboard](https://raw.githubusercontent.com/PsYcGoD/SAGE-Smart-Agent-Guidance-Engine-announcement/main/assets/sage-live-dashboard.png)
+
 It is designed to show aggregate proof without exposing private code, command text, logs, file paths, or raw outputs.
 
 The dashboard focuses on:
