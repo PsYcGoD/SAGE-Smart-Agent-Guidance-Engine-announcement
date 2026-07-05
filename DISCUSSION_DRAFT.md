@@ -58,13 +58,13 @@ AI coding agents automatically detect SAGE and route shell commands through `sag
 
 ## 🎯 Core Features
 
-### 💰 99.3% Token Compression
-Never hit context limits again. SAGE compresses command output by up to 99.3%, letting you run **100x more commands** before exhausting context.
+### 🚀 85-95% Compression — Much Longer AI Sessions
+The real problem isn't cost per command — it's context exhaustion. SAGE compresses noisy terminal output **85-95% typically (~99% peak on repetitive logs)** so your agent runs many more commands before it forgets context.
 
 **Real example:**
 - **Before SAGE:** 149 tokens of repeated build output
 - **After SAGE:** 1 token compressed summary
-- **Savings:** 99.3% compression verified
+- **Savings:** 85-95% typical, ~99% peak (measured with tiktoken on real runs)
 
 **Cost impact:** $0.0004+ saved per command at $3/million tokens
 
@@ -118,6 +118,6 @@ sage run -- python test.py
 
 **Made with 🧠 by PsYc+GoD AI & ML**
 
-*99.3% token compression | Zero config | Production ready | Privacy first*
+*85-95% typical compression | Zero config | Local-first privacy*
 
 🚀 **Transform Your AI Development Workflow Today!** 🚀

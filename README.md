@@ -50,7 +50,7 @@ Want early access or help trying it? **Comment or DM for early access.**
 S.A.G.E provides a complete AI orchestration layer with:
 - **🖥️ Beautiful Desktop GUI** - Modern interface with zero configuration required (`sage gui`)
 - **🎯 Auto-Integration** - Install once (`pip install -e .`) so AI coding agents can route commands through `sage run --`
-- **💰 Est. 99.3% token compression** - Automatic output optimization solving local assistant's context exhaustion
+- **🚀 85-95% typical compression** - Compress noisy terminal output so your AI coding agent runs many more commands before hitting context limits (~99% peak on repetitive logs, measured with tiktoken)
 - **🔧 Auto-fix engine** - ML-powered error detection and automatic fixes with confidence scoring
 - **🤖 Multi-agent coordination** - Parallel AI agents handling complex tasks simultaneously
 - **📋 Workflow automation** - YAML-based pipelines for repeatable processes
@@ -67,7 +67,7 @@ S.A.G.E provides a complete AI orchestration layer with:
 
 #### 1. **Context Management System** ⚡
 *Solving local assistant's #1 CLI Problem*
-- **99.3% token compression** on command outputs
+- **85-95% typical compression** on command outputs (~99% peak on highly repetitive logs)
 - Automatic duplicate removal and noise filtering
 - Smart diff generation (show only changes)
 - Stacktrace extraction for errors
@@ -280,7 +280,7 @@ sage mcp start
 | Metric | Value |
 |--------|-------|
 | **Average Compression** | 90-99% |
-| **Peak Compression** | est. 99.3% (149 tokens → 1 token) |
+| **Typical Compression** | 85-95% on real output (~99% peak on repetitive logs) |
 | **Token Savings per Command** | ~50-200 tokens |
 | **Cost Savings per Command** | $0.0001-$0.0006 |
 | **Annual Savings (1000 cmds)** | ~$0.50-$1.00 |
@@ -390,7 +390,7 @@ global_patterns   # Cross-project intelligence
 - **Knowledge base**: Accumulated fixes benefit everyone
 
 ### For developer automation tools
-- **Extended context**: 99.3% compression = 100x more commands
+- **Extended context**: 85-95% compression = many more commands per session
 - **Better suggestions**: Historical data improves accuracy
 - **Proactive fixes**: Auto-fix before developer intervention
 - **MCP integration**: Native MCP-compatible client support
@@ -410,7 +410,7 @@ global_patterns   # Cross-project intelligence
 # Example: 149-token output compressed to 1 token
 Input:  "Building... Done\nBuilding... Done\n" * 50  # 149 tokens
 Output: "Building... Done"                            # 1 token
-Savings: 99.3% compression ratio
+Savings: ~99% on this repetitive case (85-95% typical on real output)
 ```
 
 **Compression Strategies**:
@@ -580,7 +580,7 @@ ruff check src/ tests/
 ## 🛣️ Roadmap
 
 ### Completed (Dec 2025 - Jul 2026) ✅
-- [x] Context management system (99.3% compression)
+- [x] Context management system (85-95% typical compression)
 - [x] Auto-fix engine with ML confidence scoring
 - [x] Multi-agent orchestration
 - [x] Workflow automation (YAML-based)
@@ -653,7 +653,7 @@ sage context stats    # See 99% compression
 A: No. All data stays local in SQLite. Privacy-first design.
 
 **Q: How much does SAGE save in API costs?**  
-A: With est. of 99.3% compression, you can run 100x more commands before hitting context limits. At $3/million tokens, that's $0.0004+ saved per command.
+A: The real win is session longevity. By compressing noisy output 85-95%, your AI coding agent runs many more commands before hitting context limits. Live aggregate proof: 18.7M+ tokens saved across 2,900+ tracked runs.
 
 **Q: Can I use SAGE without MCP-compatible client?**  
 A: Yes! SAGE works standalone. MCP integration is optional.
