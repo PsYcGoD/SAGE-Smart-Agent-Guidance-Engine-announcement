@@ -24,7 +24,7 @@ I built **S.A.G.E (Smart Agent Guidance Engine)** to fix all of this.
 ```bash
 sage gui
 ```
-Beautiful interface with real-time dashboards, token analytics, 24-agent activity monitor, and one-click auto-fix.
+Beautiful interface with real-time dashboards, token analytics, smart-agent activity monitor, and one-click auto-fix.
 
 **⚡ Auto-Integration** - Install once, use everywhere:
 ```bash
@@ -32,7 +32,7 @@ pip install -e .
 ```
 AI coding agents automatically detect SAGE and route shell commands through `sage run --`. Output compressed, tokens saved, context preserved - all behind the scenes.
 
-**Want early access?** Comment or DM for help testing the GUI and 24-agent orchestration.
+**Want early access?** Comment or DM for help testing the GUI and smart-agent routing.
 
 ---
 
@@ -46,10 +46,10 @@ AI coding agents automatically detect SAGE and route shell commands through `sag
 
 | Metric | Live Proof |
 |--------|-----------|
-| **Total Runs** | 2,710 commands executed |
-| **Tokens Saved** | 18.7M tokens (from 20.3M processed) |
-| **Compression Rate** | 92.2% average across all runs |
-| **Success Rate** | 92.2% (2,498/2,710 successful) |
+| **Total Runs** | 3,820 commands executed |
+| **Tokens Saved** | 14.13M tokens (from 15.16M processed) |
+| **Compression Rate** | 93.22% average across all runs |
+| **Success Rate** | 96.86% (3,700/3,820 successful) |
 | **ML Predictions** | 16,266+ prediction events |
 
 *Privacy-first: Raw commands, outputs, and file paths stay local. Only aggregate counters published.*
@@ -80,12 +80,12 @@ ML-powered error resolution with confidence scoring:
 sage fix --apply --confidence 0.9
 ```
 
-### 🤖 24-Agent Orchestration
-**Real multi-agent fan-out on every run:**
-- Code, debug, test, research, security, performance, docs, dependency, workflow, database, frontend, release, architecture, review, refactor, devops, API, ML, memory, telemetry, privacy, red-team, blue-team, and auditor
-- Specialist skill profiles (frontend covers taste/layout/a11y/animation/Framer Motion)
-- Visible queued/running/latest-run progress in GUI and CLI
-- Configurable concurrency via `SAGE_AGENT_WORKERS`
+### 🤖 Smart Agent Orchestration
+**Targeted specialists only when useful:**
+- Seven deterministic specialists: code, debug, test, research, security, dependency, and frontend
+- Expanded keyword triggers spawn only the matching agents for debug/test/security/UI/package/research/code requests
+- Normal GUI chat stays fast; child `sage run` commands keep token tracking without expensive fan-out
+- Compact agent analysis shows which specialist caught a real issue
 
 ---
 

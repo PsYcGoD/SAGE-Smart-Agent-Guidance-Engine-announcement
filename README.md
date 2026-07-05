@@ -5,7 +5,7 @@
 [![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)]()
 [![Version](https://img.shields.io/badge/Version-2.0.0-blue)]()
 [![License](https://img.shields.io/badge/License-MIT-yellow)]()
-[![Python](https://img.shields.io/badge/Python-3.9%2B-blue)]()
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue)]()
 [![Development](https://img.shields.io/badge/Development-Dec%202025--Jul%202026-orange)]()
 
 ---
@@ -24,6 +24,17 @@ Current public proof includes:
 - Compression rate and command success rate
 - ML prediction scoring from local command history
 - Private visitor stats for the owner through `sage api visitors`
+
+Latest verified snapshot:
+
+| Metric | Value |
+|--------|------:|
+| **Commands processed** | 3,820 |
+| **Tokens processed** | 15,164,330 |
+| **Tokens compressed** | 1,027,453 |
+| **Tokens saved** | 14,136,877 |
+| **Compression rate** | 93.22% |
+| **Success rate** | 96.86% |
 
 Raw commands, outputs, file paths, and logs stay local by default. Public proof uses aggregate counters only.
 
@@ -50,7 +61,7 @@ Want early access or help trying it? **Comment or DM for early access.**
 S.A.G.E provides a complete AI orchestration layer with:
 - **🖥️ Beautiful Desktop GUI** - Modern interface with zero configuration required (`sage gui`)
 - **🎯 Auto-Integration** - Install once (`pip install -e .`) so AI coding agents can route commands through `sage run --`
-- **🚀 85-95% typical compression** - Compress noisy terminal output so your AI coding agent runs many more commands before hitting context limits (~99% peak on repetitive logs, measured with tiktoken)
+- **🚀 10x longer AI sessions** - Compresses noisy terminal output (85-95% typical, ~99% peak) so your coding agent runs far more commands before it hits context limits
 - **🔧 Auto-fix engine** - ML-powered error detection and automatic fixes with confidence scoring
 - **🤖 Multi-agent coordination** - Parallel AI agents handling complex tasks simultaneously
 - **📋 Workflow automation** - YAML-based pipelines for repeatable processes
@@ -66,13 +77,13 @@ S.A.G.E provides a complete AI orchestration layer with:
 ### 🎯 **Core Intelligence**
 
 #### 1. **Context Management System** ⚡
-*Solving local assistant's #1 CLI Problem*
-- **85-95% typical compression** on command outputs (~99% peak on highly repetitive logs)
+*Solving the #1 CLI problem for AI coding agents: context exhaustion*
+- **85-95% typical compression** on command output (~99% peak on highly repetitive logs), measured with tiktoken
+- The real payoff: your agent runs **many more commands per session** before it forgets context or compacts
 - Automatic duplicate removal and noise filtering
 - Smart diff generation (show only changes)
 - Stacktrace extraction for errors
-- **Cost savings**: $0.0004+ per command at $3/million tokens
-- **Commands**: `sage context stats`, `sage context optimize`
+- **Commands**: `sage context stats`, `sage context report`
 
 #### 2. **Auto-Fix Engine** 🔧
 *Zero-Touch Error Resolution*
@@ -84,10 +95,11 @@ S.A.G.E provides a complete AI orchestration layer with:
 - **Commands**: `sage fix`, `sage fix --apply --confidence 0.9`
 
 #### 3. **Multi-Agent Orchestration** 🤖
-*24 specialist agents on every SAGE run*
-- Full 24-agent fan-out by default: code, debug, test, research, security, performance, docs, dependency, workflow, database, frontend, release, architecture, review, refactor, devops, API, ML, memory, telemetry, privacy, red-team, blue-team, and auditor
+*Keyword-gated specialists when the request actually needs them*
+- Seven deterministic specialists: code, debug, test, research, security, dependency, and frontend
+- Expanded trigger lists keep normal chat fast while debug/test/security/UI/package/research requests get targeted analysis
+- GUI child commands keep token tracking enabled but skip expensive fan-out; the GUI runs smart post-response analysis only for matching requests
 - Each agent stores a specialist brief and skill profile, so results are traceable instead of decorative
-- Frontend/design review covers interface taste, layout polish, accessibility, animation craft, and Motion/Framer Motion patterns
 - Agent status, latest-run progress, and completed task counts are visible in the GUI and CLI
 - **Commands**: `sage agents list`, `sage agents status`, `sage agents tasks`
 
@@ -111,19 +123,18 @@ S.A.G.E provides a complete AI orchestration layer with:
 
 #### 6. **MCP Integration** 🔌
 *MCP-compatible client Native Support*
-- 6 exposed tools for MCP-compatible client CLI
+- 14 exposed tools for MCP-compatible client CLI (read/search/history/workflow by default; the command-executing tool is opt-in — see the trust-boundary note below)
 - stdio-based communication
 - Automatic server configuration
 - Zero-config setup
 - **Commands**: `sage mcp install`, `sage mcp start`
 
 #### 7. **ML Failure Prediction** 🎲
-*Proactive Error Detection*
-- Heuristic-based risk scoring
-- 13-feature extraction from commands
-- Historical failure pattern analysis
-- Pre-execution warnings
-- Confidence intervals
+*Experimental — honest about where it stands*
+- Heuristic + logistic risk scoring from 13 command features
+- Trained on your real local command history (temporal validation, no synthetic inflation)
+- **Current honest accuracy: ROC AUC ≈ 0.58 globally** (modest — strongest on specific command families like `get-content`/`rg`/`pytest`); treat as a hint, not a verdict
+- `sage ml validate` prints the honest temporal numbers so you can check for yourself
 
 #### 8. **NLP Command Parser** 💬
 *Natural Language Interface*
@@ -167,17 +178,17 @@ The beautiful desktop app provides:
 - 📊 Real-time command history and visual timeline
 - 💾 Token usage analytics and savings dashboard  
 - 🔧 One-click auto-fix with confidence scoring
-- 🤖 24-agent activity card with queued/running/latest-run progress
+- 🤖 Smart-agent activity card with queued/running/latest-run progress
 - ⚙️ Visual settings management with GitHub OAuth
 - 🌐 Live performance metrics and compression stats
 - 🎨 Modern design with light/dark themes
 
 **Zero configuration required** - just run `sage gui` and everything works!
 
-**Early access:** comment or DM if you want help testing the GUI, auto-integration, or the 24-agent fan-out.
+**Early access:** comment or DM if you want help testing the GUI, auto-integration, or smart-agent routing.
 
 ### Requirements
-- Python 3.9+
+- Python 3.10+
 - SQLite3
 - Git (optional but recommended)
 
@@ -279,11 +290,11 @@ sage mcp start
 ### Context Compression Results
 | Metric | Value |
 |--------|-------|
-| **Average Compression** | 90-99% |
-| **Typical Compression** | 85-95% on real output (~99% peak on repetitive logs) |
-| **Token Savings per Command** | ~50-200 tokens |
-| **Cost Savings per Command** | $0.0001-$0.0006 |
-| **Annual Savings (1000 cmds)** | ~$0.50-$1.00 |
+| **Typical Compression** | 85-95% on real command output |
+| **Peak Compression** | ~99% on highly repetitive logs (e.g. 149 tokens → 1) |
+| **Live aggregate saved** | 14.13M+ tokens across 3,820 tracked runs (see dashboard) |
+| **What that buys you** | Many more agent commands per session before context compaction |
+| **Measurement** | tiktoken (`cl100k_base`) — not estimated |
 
 ### Auto-Fix Accuracy
 | Error Type | Success Rate | Avg Confidence |
@@ -294,13 +305,13 @@ sage mcp start
 | Dependency Error | 92% | 0.89 |
 
 ### System Statistics
-- **Total Files**: 42 Python modules
-- **Total Lines**: ~4,900
-- **Test Coverage**: Core features tested
+- **Total Files**: ~100 Python modules
+- **Total Lines**: ~26,300
+- **Tests**: 144 passing (deterministic suite; GUI/live excluded from CI)
 - **Database Tables**: 9 tables
-- **CLI Commands**: 21 commands
-- **MCP Tools**: 6 exposed tools
-- **Agent Types**: 24 built-in agents
+- **CLI Commands**: 80+ commands & subcommands
+- **MCP Tools**: 14 exposed tools (command execution is opt-in)
+- **Agent Types**: 7 keyword-gated built-in specialists
 
 ---
 
@@ -311,7 +322,7 @@ sage mcp start
 sage/
 ├── src/sage/
 │   ├── __init__.py           # Package initialization
-│   ├── cli.py                # Main CLI interface (21 commands)
+│   ├── cli.py                # Main CLI interface (80+ commands & subcommands)
 │   ├── runner.py             # Command execution engine
 │   ├── store.py              # SQLite database layer
 │   ├── detectors.py          # Error detection system
@@ -354,7 +365,7 @@ sage/
 │       └── database.py       # Cross-project patterns
 │
 ├── tests/                    # Test suite
-├── SAGE_V2_COMPLETE.md      # Complete documentation
+├── docs/                    # Architecture notes and public screenshots
 ├── README.md                 # This file
 └── pyproject.toml           # Project configuration
 ```
@@ -407,7 +418,7 @@ global_patterns   # Cross-project intelligence
 
 ### Context Compression Algorithm
 ```python
-# Example: 149-token output compressed to 1 token
+# Example: highly repetitive 149-token output compressed to 1 token
 Input:  "Building... Done\nBuilding... Done\n" * 50  # 149 tokens
 Output: "Building... Done"                            # 1 token
 Savings: ~99% on this repetitive case (85-95% typical on real output)
@@ -495,6 +506,14 @@ sage mcp install                   # Install MCP config
 sage mcp start                     # Start MCP server
 ```
 
+By default, the MCP server exposes read/search/history/workflow helpers only.
+The `sage_run_command` tool can execute arbitrary local commands and is therefore
+disabled unless you opt in for a trusted local MCP client:
+
+```bash
+SAGE_MCP_ENABLE_COMMANDS=1 sage mcp start
+```
+
 ---
 
 ## 🎨 Integration Examples
@@ -508,12 +527,13 @@ sage mcp install
 
 # 3. Use SAGE tools in local assistant
 # local assistant can now call:
-# - sage_run_command
 # - sage_explain_error
 # - sage_suggest_fix
 # - sage_spawn_agent
 # - sage_run_workflow
 # - sage_get_history
+#
+# To expose sage_run_command, start the MCP server with SAGE_MCP_ENABLE_COMMANDS=1.
 ```
 
 ### With CI/CD Pipeline
@@ -585,7 +605,7 @@ ruff check src/ tests/
 - [x] Multi-agent orchestration
 - [x] Workflow automation (YAML-based)
 - [x] Real-time dashboard (REST API)
-- [x] MCP integration (6 tools)
+- [x] MCP integration (14 tools)
 - [x] ML failure prediction
 - [x] NLP command parser
 - [x] Cross-project intelligence
@@ -600,13 +620,14 @@ ruff check src/ tests/
 - [ ] Team collaboration features
 - [ ] Custom agent SDK
 - [ ] Plugin marketplace
-- [ ] Live Testint (Beta)
+- [ ] Live Testing (Beta)
+
 ---
 
 ## 📖 Documentation
 
 ### Complete Documentation
-- **[SAGE_V2_COMPLETE.md](SAGE_V2_COMPLETE.md)** - Full implementation guide (10,000+ words)
+- **[docs/AGENT_LAYER_IMPLEMENTATION.md](docs/AGENT_LAYER_IMPLEMENTATION.md)** - Agent-layer implementation details
 
 ### Quick Links
 - Installation Guide: See [Installation](#-installation)
@@ -652,8 +673,8 @@ sage context stats    # See 99% compression
 **Q: Does SAGE send my code to external servers?**  
 A: No. All data stays local in SQLite. Privacy-first design.
 
-**Q: How much does SAGE save in API costs?**  
-A: The real win is session longevity. By compressing noisy output 85-95%, your AI coding agent runs many more commands before hitting context limits. Live aggregate proof: 18.7M+ tokens saved across 2,900+ tracked runs.
+**Q: How much does SAGE actually help?**  
+A: The real win isn't pennies per command — it's session longevity. By compressing noisy output 85-95%, your AI coding agent runs many more commands before it hits context limits, compacts, or loses the thread. Live aggregate proof: 14.13M+ tokens saved across 3,820 tracked runs.
 
 **Q: Can I use SAGE without MCP-compatible client?**  
 A: Yes! SAGE works standalone. MCP integration is optional.
@@ -695,13 +716,13 @@ MIT License - See [LICENSE](LICENSE) for details.
 - **Feb 2026**: Multi-agent orchestration
 - **Mar 2026**: Workflow automation, dashboard
 - **Apr 2026**: MCP integration, ML prediction
-- **May 2026**: NLP parser, global intelligence, Testing
-- **Jun 2026**: Live Testing, optimization, documentation
+- **May 2026**: NLP parser, global intelligence, testing
+- **Jun 2026**: Live testing, optimization, documentation
 - **Jul 2026**: Production release, performance tuning
 
 ### Credits
 Built with ❤️ using:
-- Python 3.9+
+- Python 3.10+
 - SQLite3
 - FastAPI
 - MCP Protocol
